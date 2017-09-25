@@ -1,0 +1,36 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../../components/head/head
+    include ../../components/header/header
+    include ../../components/article_post/article_post
+    include ../../components/footer/footer
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .l-page
+
+            +header('guides')
+            //- https://vk.com/guardianfm?w=wall-89578598_121376
+
+            section.l-grid--content
+                article.c-article
+                    h2.c-article__title Пол это лава!
+
+                    .c-article__content
+                        +article_text('Будете на Стене — загляните на мост, который находится у вас за спиной при появлении в локации. Подойдите к коробкам с некими механизмами и дождитесь надписи "Не бери меня". Зажимайте кнопку действия и вуаля — вы стали участником игры "Пол — это лава". Осталось допрыгать по перилам и ящикам до противположной стороны — до столба синего света.')
+
+                        +article_slider(
+                        'https://pp.userapi.com/c836427/v836427990/5a98f/AUZpA9kTWhI.jpg',
+                        'https://pp.userapi.com/c836427/v836427990/5a971/YTVIm6m1iYU.jpg',
+                        'https://pp.userapi.com/c836427/v836427990/5a985/qEnlQiiUl_c.jpg',
+                        'https://pp.userapi.com/c836427/v836427990/5a97b/EscfaDRYVnY.jpg'
+                        )
+
+            +footer()
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();

@@ -1,9 +1,9 @@
 mixin head(data)
     meta(charset="utf-8")
     meta(http-equiv="x-ua-compatible", content="ie=edge")
-    title #{data.title}
-    meta(content="", name="description")
-    meta(content="", name="keywords")
+    title Guardian.FM
+    //meta(content="", name="description")
+    //meta(content="", name="keywords")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(content="telephone=no", name="format-detection")
     //- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers
@@ -13,7 +13,7 @@ mixin head(data)
     |<!--[if IE 9 ]><link href="%=static=%css/main_ie9%=hash=%%=min=%.css" rel="stylesheet" type="text/css"><![endif]-->
     |<!--[if (gt IE 9)|!(IE)]><!--><link href="%=static=%css/main%=hash=%%=min=%.css" rel="stylesheet" type="text/css"><!--<![endif]-->
 
-    if data.useSocialMetaTags
+    //if data.useSocialMetaTags
         meta(property="og:title", content="#{data.title}")
         meta(property="og:title", content="")
         meta(property="og:url", content="")
@@ -44,8 +44,6 @@ mixin head(data)
     meta(name="msapplication-TileImage" content="/ms-icon-144x144.png")
     meta(name="theme-color" content="#ffffff")
 
-    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.min.js")
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js")
     //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js")
 

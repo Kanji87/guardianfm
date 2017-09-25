@@ -7,8 +7,8 @@ mixin header(active, login)
         .l-grid
             a.header__logo(href="/gfm-articles/")
                 h1 GuardianFM
-                //img.header__logo-img(src="%=static=%img/general/gfm_logo.svg" alt="")
-                //img.header__logo-img--scroll(src="%=static=%img/general/gfm_logo_scroll.svg" alt="")
+                img.header__logo-img(src="%=static=%img/general/gfm_logo.svg" alt="")
+                img.header__logo-img--scroll(src="%=static=%img/general/gfm_logo_scroll.svg" alt="")
                 //- != jadeHelpers.Icon.call(locals, {iconName: 'gfm_logo', className: 'header__logo-img'})
                 //- != jadeHelpers.Icon.call(locals, {iconName: 'gfm_logo_scroll', className: 'header__logo-img--scroll'})
 
@@ -18,16 +18,16 @@ mixin header(active, login)
                 //если в каком-либо меню появилось обновление, то к классу пунтак меню (header__nav-item) добавляется класс с модификатором (header__nav-item--update)
 
                 ul.header__nav-list
-                    //li.header__nav-item.header__nav-logo
+                    li.header__nav-item.header__nav-logo
                         img.header__nav-logo-img(src="%=static=%img/general/gfm_logo.svg" alt="")
                     +nav_item(
                         'Гайды',
-                        '/gfm-articles/',
+                        '/',
                         'guides',
                         active)
-                    +nav_item(
+                    //+nav_item(
                         'Статьи',
-                        '/gfm-articles/article-list.html',
+                        '/article-list.html',
                         'articles',
                         active)
                     //+nav_item(
@@ -40,7 +40,7 @@ mixin header(active, login)
                             != pugHelpers.Icon.call(locals, {iconName: 'icon_refresh', className: 'header__refresh-icon'})
 
                 a.header__close-menu.js-close-menu(href="#")
-            
+
             //if login
                 a.header__login.header__login--logged.js-open-login-popup(href="#") FeelFreeToHateOnMe
             //else

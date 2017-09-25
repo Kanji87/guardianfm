@@ -1,17 +1,23 @@
 //- article post mixins
 mixin article_text(text)
-    p.c-article__text= text
+    p.c-article__text!= text
 
 mixin article_subtitle(text)
-    h3.c-article__subtitle= text
+    h3.c-article__subtitle!= text
 
 mixin article_quote(text, author)
     .c-article__quote
         p.c-article__quote-text!= text
         p.c-article__quote-author= author
 
-mixin article_img(img)
-    img.c-article__img(src= img alt="")
+mixin article_img(img, img_big)
+    img.c-article__img(src='%=static=%img/content/' + img srcset='%=static=%img/content/' + img_big + ' 640w' alt="")
+
+mixin article_slider(...images)
+    ul.c-slider.js-slider.c-article__slider
+        each image in images
+            li.c-slider__item
+                img.c-slider__img(src= image alt='')
 
 
 //- article post template
@@ -28,13 +34,13 @@ mixin article_post()
             +article_text('Третьей выжившей дочерью последнего королевского выводка престола из осмия — Штормджой (досл. Англ. Stormjoy — “радость бури”). Штормджой представляет собой живое, разумное облако. Величественно проплывая над нашим континентом, оно опускает свои щупальца, что рыщут внизу в поисках пропитания. На конце каждого такого щупальца расположена яркая звезда-приманка. И пускай даже её слепящий свет манит к себе, приманку следует обходить стороной. В противном случае, ты будешь съеден.')
 
             +article_img("http://simhost.org/uploads/posts/2016-08/1470213449_1470172149-cover-spread.jpg")
-            
+
             +article_text('Для наших стариков нет участи почётнее и лучше, нежели попасться в щупальца штормджоя на закате жизни. Кроме того, достойнейшие рыцари способны отрубить сияющие приманки-звёзды. У меня уже есть целых шесть штук!')
-            
+
             +article_text('Падение. Если ты оступишься и упадёшь с края континента, тебя ждёт верная смерть в океане. Особую опасность таят те дни, когда наш отец, осмиевый король, включает движители.')
-            
+
             +article_text('Пожиратели гелия. Океанические течения фундамента влекут наш дом к другим континентам. Владения гелия (досл. Англ. Helium court — “гелиумный двор”) нынче расположены рядом с нами. Обитатели этих владений того же вида, что и мы, но они — наши заклятые враги. Их воины совершают набеги на наши земли изо дня в день. ')
-            
+
             +article_text('Пожиратели гелия похожи на нас — у них по две руки, две ноги и по три глаза, совсем как у нашей расы, но они светлые, а значит злые. Я хочу стать рыцарем и сражаться с ними!')
 
             ul.c-slider.js-slider.c-article__slider

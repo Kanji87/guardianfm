@@ -227,6 +227,14 @@
         margin-top: 35px;
     }
 
+    h3 + img {
+        margin-top: 60px;
+
+        @include respond-to (fablet) {
+            margin-top: 40px;
+        }
+    }
+
     p + img {
         margin-top: 45px;
     }

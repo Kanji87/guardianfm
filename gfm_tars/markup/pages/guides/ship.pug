@@ -1,0 +1,37 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../../components/head/head
+    include ../../components/header/header
+    include ../../components/article_post/article_post
+    include ../../components/footer/footer
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .l-page
+
+            +header('guides')
+            //- https://vk.com/guardianfm?w=wall-89578598_121246
+
+            section.l-grid--content
+                article.c-article
+                    h2.c-article__title Как заглянуть под днище своему кораблю
+
+                    .c-article__content
+                        +article_text('Страж, как давно ты проводил ТО своего десантного корабля и заглядывал ему под днище?')
+                        +article_text('Теперь у тебя есть такая возможность!')
+                        +article_text('Достаточно зайти в ангар, дойти до терминала вызова и проверить - не поцарапали ли эти чертовы кабалы бочину твоей космической посудины?')
+                        +article_slider(
+                        'https://pp.userapi.com/c836237/v836237799/72974/5u0V6L2W_3o.jpg',
+                        'https://pp.userapi.com/c836237/v836237799/7297e/XyLTN2WfkUU.jpg',
+                        'https://pp.userapi.com/c836237/v836237799/72988/Fh67Ey2zKdQ.jpg',
+                        'https://pp.userapi.com/c836237/v836237799/72992/buU1ucq9kMM.jpg'
+                        )
+
+            +footer()
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
