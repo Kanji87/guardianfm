@@ -1,0 +1,8 @@
+mixin article_list_item(link, img, title, date, status)
+    a(href= link class="c-article-list__item" + (status == 'inactive' ? ' c-article-list__item--inactive' : ''))
+        if img
+            .c-article-list__img(style='background-image: url(%=static=%img/content/' + img + ')' alt=title)
+        .c-article-list__content
+            h3.c-article-list__title= title
+            if date
+                p.c-article-list__date= date
