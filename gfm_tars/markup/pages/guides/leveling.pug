@@ -1,0 +1,40 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../../components/head/head
+    include ../../components/header/header
+    include ../../components/article_post/article_post
+    include ../../components/footer/footer
+
+    head
+        +head(head.defaults)
+    body
+        |%=symbols=%
+
+        .l-page
+
+            +header('guides')
+
+            section.l-grid--content
+                article.c-article
+                    h2.c-article__title Небольшой гайд по прокачке уровня силы
+
+                    .c-article__content
+                        +article_img('leveling_small.jpg', 'leveling.jpg')
+
+                        +article_subtitle('&#10023; 200 – 265')
+
+                        +article_text('Повышайте репутацию у вендоров с помощью монет, которые дают за выполнение патрулей, заданий, убийства сильных врагов (с желтой полоской жизни) и прохождение затерянных секторов. Так же их можно найти в сундуках по всей карте. Собирайте легендарные энграммы.')
+
+                        +article_subtitle('&#10023; 265 – 280')
+
+                        +article_text('Выполняйте экзотические квесты. Выполняйте рубежи с &laquo;мощным снаряжением&raquo;. Выполняйте недельные активности Завалы, Икоры, Кейда. Обязательно сходите в Сумрачный налет.')
+
+                        +article_subtitle('&#10023; 280+')
+
+                        +article_text('Вложите ~80% блеска в покупку случайных редких модификаций у Банши-44, у него же обменивайте их на легендарные и вставляйте в снаряжение. Выполняйте героические открытые мероприятия. При их выполнении есть шанс выпадения экзотических энграмм. За счет них продолжайте училение снаряжения.')
+
+            +footer()
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
